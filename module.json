@@ -1,0 +1,23 @@
+{
+  "name": "mbed-hal",
+  "version": "0.0.0",
+  "description": "mbed low-level Hardware Abstraction Layer",
+  "keywords": [
+    "mbed",
+    "HAL"
+  ],
+  "author": "Martin Kojtal <martin.kojtal@arm.com>",
+  "repository": {
+    "url": "git@github.com:ARMmbed/mbed-hal.git",
+    "type": "git"
+  },
+  "homepage": "https://github.com/ARMmbed/mbed-hal",
+  "license": "Apache-2",
+  "extraIncludes": ["mbed-hal"],
+  "dependencies": {},
+  "targetDependencies": {
+      "efm32":{
+          "mbed-hal-efm32":"ARMmbed/mbed-hal-efm32"
+      }
+  }
+}
