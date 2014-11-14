@@ -14,7 +14,9 @@
   "homepage": "https://github.com/ARMmbed/mbed-hal",
   "license": "Apache-2",
   "extraIncludes": ["mbed-hal"],
-  "dependencies": {},
+  "dependencies": {
+      "mbed":"mbedmicro/mbed_private"
+  },
   "targetDependencies": {
       "efm32":{
           "mbed-hal-efm32":"ARMmbed/mbed-hal-efm32"
