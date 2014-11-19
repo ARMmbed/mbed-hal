@@ -18,8 +18,11 @@
       "mbed":"mbedmicro/mbed_private"
   },
   "targetDependencies": {
-      "efm32":{
-          "mbed-hal-efm32":"ARMmbed/mbed-hal-efm32"
+      "silabs":{
+          "mbed-hal-silabs":"ARMmbed/mbed-hal-silabs"
+      },
+      "freescale":{
+          "mbed-hal-freescale":"ARMmbed/mbed-hal-freescale"
       }
   }
 }
