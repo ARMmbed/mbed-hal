@@ -29,6 +29,7 @@
 #define SERIAL_EVENT_RX_MASK  (0x3F00)
 
 #define SERIAL_EVENT_ERROR       (1 << 1)
+
 #define SERIAL_EVENT_TX_COMPLETE (1 << (SERIAL_EVENT_TX_SHIFT + 0))
 
 #define SERIAL_EVENT_RX_COMPLETE      (1 << (SERIAL_EVENT_RX_SHIFT + 0))
@@ -92,7 +93,7 @@ void serial_set_flow_control(serial_t *obj, FlowControl type, PinName rxflow, Pi
 // Asynch
 
 // Start tx transfer
-void serial_start_write_asynch(serial_t *obj, void* cb, DMA_USAGE_Enum hint);
+int serial_start_write_asynch(serial_t *obj, void* cb, DMA_USAGE_Enum hint);
 
 // Start rx transfer
 void serial_start_read_asynch(serial_t *obj, void* cb, DMA_USAGE_Enum hint);
