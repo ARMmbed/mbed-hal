@@ -23,6 +23,9 @@
       },
       "freescale":{
           "mbed-hal-freescale":"ARMmbed/mbed-hal-freescale"
+      },
+      "st":{
+        "mbed-hal-st":"ARMmbed/mbed-hal-st"
       }
   }
 }
