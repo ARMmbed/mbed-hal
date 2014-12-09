@@ -20,6 +20,7 @@ typedef struct buffer_s {
     void    *buffer;
     uint32_t length;
     uint32_t pos;
+    uint8_t  width;
 } buffer_t;
 
 #endif

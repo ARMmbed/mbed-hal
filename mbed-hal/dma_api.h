@@ -26,9 +26,7 @@ typedef enum {
     DMA_USAGE_ALWAYS,
     DMA_USAGE_TEMPORARY_ALLOCATED,
     DMA_USAGE_ALLOCATED
-} DMA_USAGE_Enum;
-
-typedef void (*DMACallback)(void);
+} DMAUsage;
 
 #ifdef __cplusplus
 extern "C" {

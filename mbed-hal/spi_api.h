@@ -150,7 +150,7 @@ void spi_enable_vector_interrupt(spi_t *obj, uint32_t handler, uint8_t enable);
  * @param[in] cb      The function to call when an event occurs
  * @param[in] hint    A suggestion for how to use DMA with this transfer
  */
-void spi_master_transfer(spi_t *obj, void* cb, DMA_USAGE_Enum hint);
+void spi_master_transfer(spi_t *obj, void* cb, DMAUsage hint);
 
 /**
  * The asynchronous IRQ handler
@@ -182,7 +182,7 @@ uint8_t spi_active(spi_t *obj);
  * @param[in]  rx        The buffer to receive
  * @param[in]  rx_length The number of words to receive
  */
-void spi_buffer_set(spi_t *obj, void *tx, uint32_t tx_length, void *rx, uint32_t rx_length);
+void spi_buffer_set(spi_t *obj, void *tx, uint32_t tx_length, void *rx, uint32_t rx_length, uint8_t bit_width);
 
 /**@}*/
 
