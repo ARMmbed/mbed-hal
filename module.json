@@ -1,6 +1,6 @@
 {
   "name": "mbed-hal",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "mbed low-level Hardware Abstraction Layer",
   "keywords": [
     "mbed",
@@ -15,7 +15,7 @@
   "license": "Apache-2",
   "extraIncludes": ["mbed-hal"],
   "dependencies": {
-      "mbed":"mbedmicro/mbed_private"
+      "mbed":"ARMmbed/mbed-sdk"
   },
   "targetDependencies": {
       "silabs":{
