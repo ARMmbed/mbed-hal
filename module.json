@@ -1,6 +1,6 @@
 {
   "name": "mbed-hal",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "mbed low-level Hardware Abstraction Layer",
   "keywords": [
     "mbed",
@@ -13,19 +13,21 @@
   },
   "homepage": "https://github.com/ARMmbed/mbed-hal",
   "license": "Apache-2",
-  "extraIncludes": ["mbed-hal"],
+  "extraIncludes": [
+    "mbed-hal"
+  ],
   "dependencies": {
-      "mbed":"ARMmbed/mbed-sdk"
+    "mbed": "ARMmbed/mbed-sdk"
   },
   "targetDependencies": {
-      "silabs":{
-          "mbed-hal-silabs":"ARMmbed/mbed-hal-silabs"
-      },
-      "freescale":{
-          "mbed-hal-freescale":"ARMmbed/mbed-hal-freescale#~0.0.2"
-      },
-      "st":{
-        "mbed-hal-st":"ARMmbed/mbed-hal-st"
-      }
+    "silabs": {
+      "mbed-hal-silabs": "ARMmbed/mbed-hal-silabs"
+    },
+    "freescale": {
+      "mbed-hal-freescale": "ARMmbed/mbed-hal-freescale#~0.0.2"
+    },
+    "st": {
+      "mbed-hal-st": "ARMmbed/mbed-hal-st"
+    }
   }
 }
