@@ -27,7 +27,7 @@
       "mbed-hal-freescale": "ARMmbed/mbed-hal-freescale#~0.0.2"
     },
     "st": {
-      "mbed-hal-st": "ARMmbed/mbed-hal-st"
+      "mbed-hal-st": "ARMmbed/mbed-hal-st#~0.0.1"
     }
   }
 }
