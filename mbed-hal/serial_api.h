@@ -51,7 +51,7 @@
 #define SERIAL_EVENT_RX_OVERFLOW        (1 << (SERIAL_EVENT_RX_SHIFT + 4))
 #define SERIAL_EVENT_RX_CHARACTER_MATCH (1 << (SERIAL_EVENT_RX_SHIFT + 5))
 #define SERIAL_EVENT_RX_ALL             (SERIAL_EVENT_RX_OVERFLOW | SERIAL_EVENT_RX_PARITY_ERROR | \
-                                         SERIAL_EVENT_RX_FRAMING_ERROR | SERIAL_EVENT_RX_OVERRUN_ERROR \
+                                         SERIAL_EVENT_RX_FRAMING_ERROR | SERIAL_EVENT_RX_OVERRUN_ERROR | \
                                          SERIAL_EVENT_RX_COMPLETE | SERIAL_EVENT_RX_CHARACTER_MATCH)
 /**@}*/
 
@@ -206,6 +206,8 @@ void serial_pinout_tx(PinName tx);
  */
 void serial_set_flow_control(serial_t *obj, FlowControl type, PinName rxflow, PinName txflow);
 
+#if DEVICE_SERIAL_ASYNCH
+
 /**@}*/
 
 /**
@@ -333,6 +335,8 @@ void serial_read_enable_interrupt(serial_t *obj, uint32_t address, uint8_t enabl
 void serial_set_char_match(serial_t *obj, uint8_t char_match);
 
 /**@}*/
+
+#endif
 
 #ifdef __cplusplus
 }

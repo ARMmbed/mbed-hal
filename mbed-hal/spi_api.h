@@ -123,6 +123,7 @@ void spi_slave_write  (spi_t *obj, int value);
 int  spi_busy         (spi_t *obj);
 /**@}*/
 
+#if DEVICE_SPI_ASYNCH
 /**
  * \defgroup AsynchSPI Asynchronous SPI Hardware Abstraction Layer
  * @{
@@ -183,6 +184,8 @@ uint8_t spi_active(spi_t *obj);
  * @param[in]  rx_length The number of words to receive
  */
 void spi_buffer_set(spi_t *obj, void *tx, uint32_t tx_length, void *rx, uint32_t rx_length, uint8_t bit_width);
+
+#endif
 
 /**@}*/
 
