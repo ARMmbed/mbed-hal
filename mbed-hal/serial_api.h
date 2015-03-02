@@ -218,52 +218,31 @@ void serial_set_flow_control(serial_t *obj, FlowControl type, PinName rxflow, Pi
 /** Begin asynchronous TX transfer. The used buffer is specified in the serial object,
  *  tx_buff
  *
- * @param obj  The serial object
- * @param cb   The function to call when an event occurs
- * @param hint A suggestion for how to use DMA with this transfer
+ * @param obj       The serial object
+ * @param tx        The buffer for sending
+ * @param tx_length The number of words to transmit
+ * @param tx_width  The bit width of buffer word
+ * @param handler   The serial handler
+ * @param event     The logical OR of events to be registered
+ * @param hint      A suggestion for how to use DMA with this transfer
  * @return Returns number of data transfered, or 0 otherwise
  */
-int serial_start_write_asynch(serial_t *obj, void* cb, DMAUsage hint);
+int serial_tx_asynch(serial_t *obj, void *tx, uint32_t tx_length, uint8_t tx_width, uint32_t handler, uint32_t event, DMAUsage hint);
 
 /** Begin asynchronous RX transfer (enable interrupt for data collecting)
  *  The used buffer is specified in the serial object - rx_buff
  *
- * @param obj  The serial object
- * @param cb   The function to call when an event occurs
- * @param hint A suggestion for how to use DMA with this transfer
+ * @param obj        The serial object
+ * @param rx         The buffer for sending
+ * @param rx_length  The number of words to transmit
+ * @param rx_width   The bit width of buffer word
+ * @param handler    The serial handler
+ * @param event      The logical OR of events to be registered
+ * @param handler    The serial handler
+ * @param char_match A character in range 0-254 to be matched
+ * @param hint       A suggestion for how to use DMA with this transfer
  */
-void serial_start_read_asynch(serial_t *obj, void* cb, DMAUsage hint);
-
-/** Configure TX events
- *
- * @param obj    The serial object
- * @param event  The logical OR of the TX events to configure
- * @param enable Set to non-zero to enable events, or zero to disable them
- */
-void serial_tx_enable_event(serial_t *obj, int event, uint8_t enable);
-
-/**
- * @param obj    The serial object.
- * @param event  The logical OR of the RX events to configure
- * @param enable Set to non-zero to enable events, or zero to disable them
- */
-void serial_rx_enable_event(serial_t *obj, int event, uint8_t enable);
-
-/** Configure the TX buffer for an asynchronous write serial transaction
- *
- * @param obj       The serial object.
- * @param tx        The buffer for sending.
- * @param tx_length The number of words to transmit.
- */
-void serial_tx_buffer_set(serial_t *obj, void *tx, int tx_length, uint8_t width);
-
-/** Configure the TX buffer for an asynchronous read serial transaction
- *
- * @param obj       The serial object.
- * @param rx        The buffer for receiving.
- * @param rx_length The number of words to read.
- */
-void serial_rx_buffer_set(serial_t *obj, void *rx, int tx_length, uint8_t width);
+void serial_rx_asynch(serial_t *obj, void *rx, uint32_t rx_length, uint8_t rx_width, uint32_t handler, uint32_t event, uint8_t char_match, DMAUsage hint);
 
 /** Attempts to determine if the serial peripheral is already in use for TX
  *
@@ -279,21 +258,12 @@ uint8_t serial_tx_active(serial_t *obj);
  */
 uint8_t serial_rx_active(serial_t *obj);
 
-/** The asynchronous TX handler. Writes to the TX FIFO and checks for events.
- *  If any TX event has occured, the TX abort function is called.
- *
- * @param obj The serial object
- * @return Returns event flags if a TX transfer termination condition was met or 0 otherwise
- */
-int serial_tx_irq_handler_asynch(serial_t *obj);
-
-/** The asynchronous RX handler. Reads from the RX FIFOF and checks for events.
- *  If any RX event has occured, the RX abort function is called.
+/** The asynchronous TX and RX handler.
  *
  * @param obj The serial object
  * @return Returns event flags if a RX transfer termination condition was met or 0 otherwise
  */
-int serial_rx_irq_handler_asynch(serial_t *obj);
+int serial_irq_handler_asynch(serial_t *obj);
 
 /** Abort the ongoing TX transaction. It disables the enabled interupt for TX and
  *  flush TX hardware buffer if TX FIFO is used
@@ -308,31 +278,6 @@ void serial_tx_abort_asynch(serial_t *obj);
  * @param obj The serial object
  */
 void serial_rx_abort_asynch(serial_t *obj);
-
-/** Enable and set the interrupt handler for write (TX)
- *
- * @param obj     The serial object
- * @param address The address of TX handler
- * @param enable  Set to non-zero to enable or zero to disable
- */
-void serial_write_enable_interrupt(serial_t *obj, uint32_t address, uint8_t enable);
-
-/** Enable and set the interrupt handler for read (RX)
- *
- * @param obj     The serial object
- * @param address The address of RX handler
- * @param enable  Set to non-zero to enable or zero to disable
- */
-void serial_read_enable_interrupt(serial_t *obj, uint32_t address, uint8_t enable);
-
-/** Set character to be matched. If an event is enabled, and received character
- *  matches the defined char_match, the receiving process is stopped and MATCH event
- *  is invoked
- *
- * @param obj        The serial object
- * @param char_match A character in range 0-254
- */
-void serial_set_char_match(serial_t *obj, uint8_t char_match);
 
 /**@}*/
 
