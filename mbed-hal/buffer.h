@@ -16,11 +16,13 @@
 #ifndef MBED_BUFFER_H
 #define MBED_BUFFER_H
 
+/** Generic buffer structure
+ */
 typedef struct buffer_s {
-    void    *buffer;
-    uint32_t length;
-    uint32_t pos;
-    uint8_t  width;
+    void    *buffer; /**< the pointer to a buffer */
+    uint32_t length; /**< the buffer length */
+    uint32_t pos;    /**< actual buffer position */
+    uint8_t  width;  /**< The buffer unit width (8, 16, 32, 64), used for proper *buffer casting */
 } buffer_t;
 
 #endif
