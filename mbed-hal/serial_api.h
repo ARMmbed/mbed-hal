@@ -57,10 +57,6 @@
 
 #define SERIAL_RESERVED_CHAR_MATCH (255)
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 typedef enum {
     ParityNone = 0,
     ParityOdd = 1,
@@ -90,6 +86,10 @@ typedef struct {
     uint8_t char_match;
     uint8_t char_found;
 } serial_t;
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /**
  * \defgroup GeneralSerial Serial Configuration Functions

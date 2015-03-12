@@ -21,10 +21,6 @@
 
 #if DEVICE_I2C
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /**
  * @defgroup I2CEvents I2C Events Macros
  *
@@ -47,6 +43,10 @@ enum {
   I2C_ERROR_NO_SLAVE = -1,
   I2C_ERROR_BUS_BUSY = -2
 };
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /**
  * \defgroup GeneralI2C I2C Configuration Functions

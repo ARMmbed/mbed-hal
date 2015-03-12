@@ -22,10 +22,6 @@
 
 #if DEVICE_SPI
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #define SPI_EVENT_ERROR       (1 << 1)
 #define SPI_EVENT_COMPLETE    (1 << 2)
 #define SPI_EVENT_RX_OVERFLOW (1 << 3)
@@ -40,6 +36,10 @@ typedef struct {
     struct buffer_s tx_buff;
     struct buffer_s rx_buff;
 } spi_t;
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /**
  * \defgroup GeneralSPI SPI Configuration Functions
@@ -132,7 +132,13 @@ void spi_slave_write(spi_t *obj, int value);
  */
 int  spi_busy(spi_t *obj);
 
+/** Get the module number
+ *
+ * @param[in] obj The SPI peripheral to check
+ * @return The module number
+ */
 uint8_t spi_get_module(spi_t *obj);
+
 /**@}*/
 
 #if DEVICE_SPI_ASYNCH
