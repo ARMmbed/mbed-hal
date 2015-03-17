@@ -33,11 +33,17 @@
 
 /**@}*/
 
+#if DEVICE_I2C_ASYNCH
 typedef struct {
     struct i2c_s    i2c;
     struct buffer_s tx_buff;
     struct buffer_s rx_buff;
 } i2c_t;
+
+#else
+typedef struct i2c_s i2c_t;
+
+#endif
 
 enum {
   I2C_ERROR_NO_SLAVE = -1,
