@@ -31,11 +31,16 @@
 
 #define SPI_FILL_WORD         (0xFFFF)
 
+#if DEVICE_SPI_ASYNCH
 typedef struct {
     struct spi_s spi;
     struct buffer_s tx_buff;
     struct buffer_s rx_buff;
 } spi_t;
+
+#else
+typedef struct spi_s spi_t;
+#endif
 
 #ifdef __cplusplus
 extern "C" {

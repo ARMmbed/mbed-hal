@@ -79,6 +79,7 @@ typedef enum {
 
 typedef void (*uart_irq_handler)(uint32_t id, SerialIrq event);
 
+#if DEVICE_SERIAL_ASYNCH
 typedef struct {
     struct serial_s serial;
     struct buffer_s tx_buff;
@@ -86,6 +87,11 @@ typedef struct {
     uint8_t char_match;
     uint8_t char_found;
 } serial_t;
+
+#else
+typedef struct serial_s serial_t;
+
+#endif
 
 #ifdef __cplusplus
 extern "C" {
