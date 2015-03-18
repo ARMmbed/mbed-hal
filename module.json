@@ -17,17 +17,17 @@
     "mbed-hal"
   ],
   "dependencies": {
-    "mbed": "ARMmbed/mbed-sdk"
+    "mbed": "ARMmbed/mbed-sdk-private"
   },
   "targetDependencies": {
     "silabs": {
       "mbed-hal-silabs": "ARMmbed/mbed-hal-silabs"
     },
     "freescale": {
-      "mbed-hal-freescale": "ARMmbed/mbed-hal-freescale#~0.0.2"
+      "mbed-hal-freescale": "ARMmbed/mbed-hal-freescale-private#~0.1.0"
     },
     "st": {
-      "mbed-hal-st": "ARMmbed/mbed-hal-st#~0.0.1"
+      "mbed-hal-st": "ARMmbed/mbed-hal-st-private#~0.1.0"
     }
   }
 }
