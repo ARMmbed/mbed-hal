@@ -35,13 +35,17 @@
 /**@}*/
 
 #if DEVICE_I2C_ASYNCH
+/** Asynch i2c hal structure
+ */
 typedef struct {
-    struct i2c_s    i2c;
-    struct buffer_s tx_buff;
-    struct buffer_s rx_buff;
+    struct i2c_s    i2c;     /**< Target specific i2c structure */
+    struct buffer_s tx_buff; /**< Tx buffer */
+    struct buffer_s rx_buff; /**< Rx buffer */
 } i2c_t;
 
 #else
+/** Non-asynch i2c hal structure
+ */
 typedef struct i2c_s i2c_t;
 
 #endif
@@ -187,7 +191,7 @@ void i2c_slave_address(i2c_t *obj, int idx, uint32_t address, uint32_t mask);
  *  @param handler   The I2C IRQ handler to be set
  *  @param hint      DMA hint usage
  */
-void i2c_transfer_asynch(i2c_t *obj, void *tx, uint32_t tx_length, void *rx, uint32_t rx_length, uint32_t address, uint32_t stop, uint32_t handler, uint32_t event, DMAUsage hint);
+void i2c_transfer_asynch(i2c_t *obj, void *tx, size_t tx_length, void *rx, size_t rx_length, uint32_t address, uint32_t stop, uint32_t handler, uint32_t event, DMAUsage hint);
 
 /** The asynchronous IRQ handler
  *  @param obj The I2C object which holds the transfer information

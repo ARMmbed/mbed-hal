@@ -80,15 +80,19 @@ typedef enum {
 typedef void (*uart_irq_handler)(uint32_t id, SerialIrq event);
 
 #if DEVICE_SERIAL_ASYNCH
+/** Asynch serial hal structure
+ */
 typedef struct {
-    struct serial_s serial;
-    struct buffer_s tx_buff;
-    struct buffer_s rx_buff;
-    uint8_t char_match;
-    uint8_t char_found;
+    struct serial_s serial;  /**< Target specific serial structure */
+    struct buffer_s tx_buff; /**< Tx buffer */
+    struct buffer_s rx_buff; /**< Rx buffer */
+    uint8_t char_match;      /**< Character to be matched */
+    uint8_t char_found;      /**< State of the matched character */
 } serial_t;
 
 #else
+/** Non-asynch serial hal structure
+ */
 typedef struct serial_s serial_t;
 
 #endif
@@ -217,7 +221,7 @@ void serial_set_flow_control(serial_t *obj, FlowControl type, PinName rxflow, Pi
 /**@}*/
 
 /**
- * \defgroup AsynchSerial Asynchronous serial Hardware Abstraction Layer
+ * \defgroup AsynchSerial Asynchronous Serial Hardware Abstraction Layer
  * @{
  */
 
@@ -233,7 +237,7 @@ void serial_set_flow_control(serial_t *obj, FlowControl type, PinName rxflow, Pi
  * @param hint      A suggestion for how to use DMA with this transfer
  * @return Returns number of data transfered, or 0 otherwise
  */
-int serial_tx_asynch(serial_t *obj, void *tx, uint32_t tx_length, uint8_t tx_width, uint32_t handler, uint32_t event, DMAUsage hint);
+int serial_tx_asynch(serial_t *obj, void *tx, size_t tx_length, uint8_t tx_width, uint32_t handler, uint32_t event, DMAUsage hint);
 
 /** Begin asynchronous RX transfer (enable interrupt for data collecting)
  *  The used buffer is specified in the serial object - rx_buff
@@ -248,7 +252,7 @@ int serial_tx_asynch(serial_t *obj, void *tx, uint32_t tx_length, uint8_t tx_wid
  * @param char_match A character in range 0-254 to be matched
  * @param hint       A suggestion for how to use DMA with this transfer
  */
-void serial_rx_asynch(serial_t *obj, void *rx, uint32_t rx_length, uint8_t rx_width, uint32_t handler, uint32_t event, uint8_t char_match, DMAUsage hint);
+void serial_rx_asynch(serial_t *obj, void *rx, size_t rx_length, uint8_t rx_width, uint32_t handler, uint32_t event, uint8_t char_match, DMAUsage hint);
 
 /** Attempts to determine if the serial peripheral is already in use for TX
  *

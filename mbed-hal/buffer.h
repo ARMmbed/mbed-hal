@@ -1,5 +1,5 @@
 /* mbed Microcontroller Library
- * Copyright (c) 2006-2013 ARM Limited
+ * Copyright (c) 2014-2015 ARM Limited
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@
  */
 typedef struct buffer_s {
     void    *buffer; /**< the pointer to a buffer */
-    uint32_t length; /**< the buffer length */
-    uint32_t pos;    /**< actual buffer position */
+    size_t   length; /**< the buffer length */
+    size_t   pos;    /**< actual buffer position */
     uint8_t  width;  /**< The buffer unit width (8, 16, 32, 64), used for proper *buffer casting */
 } buffer_t;
 
