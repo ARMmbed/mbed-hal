@@ -27,7 +27,7 @@
 #define SPI_EVENT_RX_OVERFLOW (1 << 3)
 #define SPI_EVENT_ALL         (SPI_EVENT_ERROR | SPI_EVENT_COMPLETE | SPI_EVENT_RX_OVERFLOW)
 
-#define SPI_EVENT_INTERNAL_TRANSFER_COMPLETE (1 << 30)
+#define SPI_EVENT_INTERNAL_TRANSFER_COMPLETE (1 << 30) // internal flag to report an event occurred
 
 #define SPI_FILL_WORD         (0xFFFF)
 
