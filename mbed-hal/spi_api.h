@@ -31,6 +31,11 @@
 
 #define SPI_FILL_WORD         (0xFFFF)
 
+typedef enum {
+    SPI_MSB,
+    SPI_LSB
+} spi_bitorder_t;
+
 #if DEVICE_SPI_ASYNCH
 /** Asynch spi hal structure
  */
@@ -88,7 +93,7 @@ void spi_free(spi_t *obj);
  * @param[in]     mode  The SPI mode (clock polarity, phase, and shift direction)
  * @param[in]     slave Zero for master mode or non-zero for slave mode
  */
-void spi_format(spi_t *obj, int bits, int order, int mode, int slave);
+void spi_format(spi_t *obj, int bits, int mode, spi_bitorder_t order, int slave);
 
 /** Set the SPI baud rate
  *
