@@ -1,6 +1,6 @@
 {
   "name": "mbed-hal",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "mbed low-level Hardware Abstraction Layer",
   "private": true,
   "keywords": [
@@ -28,7 +28,7 @@
       "mbed-hal-freescale": "~0.1.0"
     },
     "st": {
-      "mbed-hal-st": "~0.1.0"
+      "mbed-hal-st": "~0.2.0"
     }
   }
 }
