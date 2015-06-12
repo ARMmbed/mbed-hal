@@ -55,11 +55,11 @@ void lp_ticker_init(void);
  */
 uint32_t lp_ticker_read(void);
 
-/** Set interrupt for specified timestamp
+/** Set interrupt for specified ticks
  *
- * @param timestamp The time in microseconds to be set
+ * @param ticks The time in microseconds to be set
  */
-void lp_ticker_set_interrupt(timestamp_t timestamp);
+void lp_ticker_set_interrupt(uint32_t ticks);
 
 /** Disable low power ticker interrupt
  *
@@ -70,6 +70,10 @@ void lp_ticker_disable_interrupt(void);
  *
  */
 void lp_ticker_clear_interrupt(void);
+
+/** TODO write docs
+ */
+uint32_t lp_ticker_get_overflows(void);
 
 /**@}*/
 
