@@ -31,17 +31,6 @@ extern "C" {
  * @{
  */
 
-/** Get low power ticker's data
- *
- * @return The low power ticker data
- */
-const ticker_data_t* get_lp_ticker_data(void);
-
-/** The wrapper for ticker_irq_handler, to pass lp ticker's data
- *
- */
-void lp_ticker_irq_handler(void);
-
 /* HAL lp ticker */
 
 /** Initialize the low power ticker
@@ -61,17 +50,7 @@ uint32_t lp_ticker_read(void);
  */
 void lp_ticker_set_interrupt(uint32_t ticks);
 
-/** Disable low power ticker interrupt
- *
- */
-void lp_ticker_disable_interrupt(void);
-
-/** Clear the low power ticker interrupt
- *
- */
-void lp_ticker_clear_interrupt(void);
-
-/** TODO write docs
+/** TODO 0xc0170: write docs
  */
 uint32_t lp_ticker_get_overflows(void);
 
