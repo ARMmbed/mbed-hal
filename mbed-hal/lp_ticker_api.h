@@ -44,15 +44,20 @@ void lp_ticker_init(void);
  */
 uint32_t lp_ticker_read(void);
 
-/** Set interrupt for specified ticks
+/** Set interrupt for specified time
  *
- * @param ticks The time in microseconds to be set
+ * @param now  The current time
+ * @param time The time to be matched
  */
-void lp_ticker_set_interrupt(uint32_t ticks);
+void lp_ticker_set_interrupt(uint32_t now, uint32_t time);
 
 /** TODO 0xc0170: write docs
  */
 uint32_t lp_ticker_get_overflows(void);
+
+/** TODO 0xc0170: write docs
+ */
+uint32_t lp_ticker_get_compare_match(void);
 
 /**@}*/
 
