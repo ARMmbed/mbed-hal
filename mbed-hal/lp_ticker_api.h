@@ -51,11 +51,15 @@ uint32_t lp_ticker_read(void);
  */
 void lp_ticker_set_interrupt(uint32_t now, uint32_t time);
 
-/** TODO 0xc0170: write docs
+/** Get the overflows counter
+ *
+ * @return The counter of overflows
  */
 uint32_t lp_ticker_get_overflows(void);
 
-/** TODO 0xc0170: write docs
+/** Get compare match register
+ *
+ * @return The time when is  the next lp ticker interrupt scheduled
  */
 uint32_t lp_ticker_get_compare_match(void);
 
