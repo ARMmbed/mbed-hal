@@ -22,13 +22,13 @@
   },
   "targetDependencies": {
     "silabs": {
-      "mbed-hal-silabs": "*"
+      "mbed-hal-silabs": "~0.3.0"
     },
     "freescale": {
-      "mbed-hal-freescale": "~0.1.0"
+      "mbed-hal-freescale": "~0.2.0"
     },
     "st": {
-      "mbed-hal-st": "~0.2.0"
+      "mbed-hal-st": "~0.3.0"
     }
   }
 }
