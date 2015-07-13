@@ -54,7 +54,7 @@ void lp_ticker_set_interrupt(uint32_t time);
  *
  * @return The counter of overflows
  */
-uint32_t lp_ticker_get_overflows(void);
+uint32_t lp_ticker_get_overflows_counter(void);
 
 /** Get compare match register
  *
