@@ -46,10 +46,9 @@ uint32_t lp_ticker_read(void);
 
 /** Set interrupt for specified time
  *
- * @param now  The current time
  * @param time The time to be matched
  */
-void lp_ticker_set_interrupt(uint32_t now, uint32_t time);
+void lp_ticker_set_interrupt(uint32_t time);
 
 /** Get the overflows counter
  *
@@ -59,7 +58,7 @@ uint32_t lp_ticker_get_overflows(void);
 
 /** Get compare match register
  *
- * @return The time when is  the next lp ticker interrupt scheduled
+ * @return The time when is the next lp ticker interrupt scheduled
  */
 uint32_t lp_ticker_get_compare_match(void);
 
