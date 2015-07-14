@@ -29,6 +29,9 @@
     },
     "st": {
       "mbed-hal-st": "~0.3.0"
+    },
+    "nordic": {
+      "mbed-hal-nordic": "~0.0.1"
     }
   }
 }
