@@ -63,6 +63,13 @@ uint32_t lp_ticker_get_overflows_counter(void);
  */
 uint32_t lp_ticker_get_compare_match(void);
 
+/** Set lp ticker interrupt and enter mbed sleep.
+ *
+ * @param now  The current time
+ * @param time The time to be matched
+ */
+void lp_ticker_sleep_until(uint32_t now, uint32_t time);
+
 /**@}*/
 
 #ifdef __cplusplus
