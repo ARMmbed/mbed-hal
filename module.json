@@ -25,10 +25,10 @@
       "mbed-hal-silabs": "~0.3.0"
     },
     "freescale": {
-      "mbed-hal-freescale": "~0.2.0"
+      "mbed-hal-freescale": "~0.3.0"
     },
     "st": {
-      "mbed-hal-st": "~0.3.0"
+      "mbed-hal-st": "~0.4.0"
     },
     "nordic": {
       "mbed-hal-nordic": "~0.0.1"
