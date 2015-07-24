@@ -31,17 +31,6 @@ extern "C" {
  * @{
  */
 
-/** Get low power ticker's data
- *
- * @return The low power ticker data
- */
-const ticker_data_t* get_lp_ticker_data(void);
-
-/** The wrapper for ticker_irq_handler, to pass lp ticker's data
- *
- */
-void lp_ticker_irq_handler(void);
-
 /* HAL lp ticker */
 
 /** Initialize the low power ticker
@@ -55,21 +44,31 @@ void lp_ticker_init(void);
  */
 uint32_t lp_ticker_read(void);
 
-/** Set interrupt for specified timestamp
+/** Set interrupt for specified time
  *
- * @param timestamp The time in microseconds to be set
+ * @param now  The current time
+ * @param time The time to be matched
  */
-void lp_ticker_set_interrupt(timestamp_t timestamp);
+void lp_ticker_set_interrupt(uint32_t now, uint32_t time);
 
-/** Disable low power ticker interrupt
+/** Get the overflows counter
  *
+ * @return The counter of overflows
  */
-void lp_ticker_disable_interrupt(void);
+uint32_t lp_ticker_get_overflows_counter(void);
 
-/** Clear the low power ticker interrupt
+/** Get compare match register
  *
+ * @return The time when is the next lp ticker interrupt scheduled
  */
-void lp_ticker_clear_interrupt(void);
+uint32_t lp_ticker_get_compare_match(void);
+
+/** Set lp ticker interrupt and enter mbed sleep.
+ *
+ * @param now  The current time
+ * @param time The time to be matched
+ */
+void lp_ticker_sleep_until(uint32_t now, uint32_t time);
 
 /**@}*/
 
