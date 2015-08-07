@@ -18,7 +18,7 @@
     "mbed-hal"
   ],
   "dependencies": {
-    "mbed-core": "*"
+    "mbed-drivers": "*"
   },
   "targetDependencies": {
     "silabs": {
