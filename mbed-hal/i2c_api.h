@@ -129,48 +129,6 @@ int  i2c_byte_write(i2c_t *obj, int data);
 
 /**@}*/
 
-#if DEVICE_I2CSLAVE
-
-/**
- * \defgroup SynchI2C Synchronous I2C Hardware Abstraction Layer for slave
- * @{
- */
-
-/** Configure I2C as slave or master.
- *  @param obj The I2C object
- *  @return non-zero if a value is available
- */
-void i2c_slave_mode(i2c_t *obj, int enable_slave);
-
-/** Check to see if the I2C slave has been addressed.
- *  @param obj The I2C object
- *  @return The status - 1 - read addresses, 2 - write to all slaves,
- *         3 write addressed, 0 - the slave has not been addressed
- */
-int  i2c_slave_receive(i2c_t *obj);
-
-/** Configure I2C as slave or master.
- *  @param obj The I2C object
- *  @return non-zero if a value is available
- */
-int  i2c_slave_read(i2c_t *obj, char *data, int length);
-
-/** Configure I2C as slave or master.
- *  @param obj The I2C object
- *  @return non-zero if a value is available
- */
-int  i2c_slave_write(i2c_t *obj, const char *data, int length);
-
-/** Configure I2C address.
- *  @param obj     The I2C object
- *  @param idx     Currently not used
- *  @param address The address to be set
- *  @param mask    Currently not used
- */
-void i2c_slave_address(i2c_t *obj, int idx, uint32_t address, uint32_t mask);
-
-#endif
-
 /**@}*/
 
 #if DEVICE_I2C_ASYNCH

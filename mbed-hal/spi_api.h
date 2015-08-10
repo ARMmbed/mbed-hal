@@ -68,9 +68,8 @@ extern "C" {
  * @param[in]  mosi The pin to use for MOSI
  * @param[in]  miso The pin to use for MISO
  * @param[in]  sclk The pin to use for SCLK
- * @param[in]  ssel The pin to use for SSEL
  */
-void spi_init(spi_t *obj, PinName mosi, PinName miso, PinName sclk, PinName ssel);
+void spi_init(spi_t *obj, PinName mosi, PinName miso, PinName sclk);
 
 /** Release a SPI object
  *
@@ -86,14 +85,13 @@ void spi_free(spi_t *obj);
 
 /** Configure the SPI format
  *
- * Set the number of bits per frame, configure clock polarity and phase, shift order and master/slave mode
+ * Set the number of bits per frame, configure clock polarity and phase, shift order
  * @param[in,out] obj   The SPI object to configure
  * @param[in]     bits  The number of bits per frame
  * @param[in]     mode  The SPI mode (clock polarity, phase, and shift direction)
  * @param[in]     order Bit order. SPI_MSB (standard) or SPI_LSB.
- * @param[in]     slave Zero for master mode or non-zero for slave mode
  */
-void spi_format(spi_t *obj, int bits, int mode, spi_bitorder_t order, int slave);
+void spi_format(spi_t *obj, int bits, int mode, spi_bitorder_t order);
 
 /** Set the SPI baud rate
  *
@@ -117,29 +115,6 @@ void spi_frequency(spi_t *obj, int hz);
  * @return Returns the value received during send
  */
 int  spi_master_write(spi_t *obj, int value);
-
-/** Check if a value is available to read
- *
- * @param[in] obj The SPI peripheral to check
- * @return non-zero if a value is available
- */
-int  spi_slave_receive(spi_t *obj);
-
-/** Get a received value out of the SPI receive buffer in slave mode
- *
- * Blocks until a value is available
- * @param[in] obj The SPI peripheral to read
- * @return The value received
- */
-int  spi_slave_read(spi_t *obj);
-
-/** Write a value to the SPI peripheral in slave mode
- *
- * Blocks until the SPI peripheral can be written to
- * @param[in] obj   The SPI peripheral to write
- * @param[in] value The value to write
- */
-void spi_slave_write(spi_t *obj, int value);
 
 /** Checks if the specified SPI peripheral is in use
  *
