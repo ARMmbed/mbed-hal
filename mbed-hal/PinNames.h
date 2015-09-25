@@ -29,7 +29,7 @@ typedef enum {
     // Not connected
     NC = (int)0xFFFFFFFF,
 #include "mbed-hal/chip_pins.array"
-#include "../generated/pins.array"
+#include "mbed-hal/pins.array"
 } PinName;
 
 #ifdef __cplusplus
