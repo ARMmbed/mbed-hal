@@ -22,9 +22,9 @@ outputfile = open(sys.argv[2],'w')
 ocfg = json.load(jsonfile)
 jsonfile.close()
 pins = {}
-if 'mbed-os' in ocfg:
-    if 'pins' in ocfg['mbed-os']:
-        pins = ocfg['mbed-os']['pins']
+if 'hardware' in ocfg:
+    if 'pins' in ocfg['hardware']:
+        pins = ocfg['hardware']['pins']
 
 f = outputfile
 
