@@ -25,12 +25,16 @@
 extern "C" {
 #endif
 
+#ifdef YOTTA_CFG_HARDWARE_PINS
 typedef enum {
     // Not connected
     NC = (int)0xFFFFFFFF,
 #include "mbed-hal/chip_pins.array"
 #include "mbed-hal/pins.array"
 } PinName;
+#else
+#include "PinNames.h"
+#endif
 
 #ifdef __cplusplus
 }
