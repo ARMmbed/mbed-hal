@@ -19,25 +19,23 @@
 
 #include "cmsis.h"
 
-#include "mbed-hal/PinDefs.h"
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #ifdef YOTTA_CFG_HARDWARE_PINS
+#   include "mbed-hal/PinDefs.h"
+#   ifdef __cplusplus
+extern "C" {
+#   endif
 typedef enum {
     // Not connected
     NC = (int)0xFFFFFFFF,
-#include "mbed-hal/chip_pins.array"
-#include "mbed-hal/pins.array"
+#   include "mbed-hal/chip_pins.array"
+#   include "mbed-hal/pins.array"
 } PinName;
+#   ifdef __cplusplus
+}
+#   endif
 #else
-#include "PinNames.h"
+#   include "PinNames.h"
 #endif
 
-#ifdef __cplusplus
-}
-#endif
 
 #endif // MBED_PINNAMES_H
