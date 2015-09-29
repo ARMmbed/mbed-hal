@@ -55,14 +55,15 @@ template = '''
 indent = '    '
 pin_array = []
 
-while len(pins.keys()):
-    for pin in pins.keys()[:]:
-        if pins[pin] in pins.keys():
-            continue
-        pin_array += ['{key} = {value}'.format(key=pin, value=pins[pin])]
-        del pins[pin]
+if pins is dict:
+    while len(pins.keys()):
+        for pin in pins.keys()[:]:
+            if pins[pin] in pins.keys():
+                continue
+            pin_array += ['{key} = {value}'.format(key=pin, value=pins[pin])]
+            del pins[pin]
 
-pin_str = indent + (',\n'+indent).join(pin_array)
+    pin_str = indent + (',\n'+indent).join(pin_array)
 
-f.write(template%pin_str)
+    f.write(template%pin_str)
 f.close()
