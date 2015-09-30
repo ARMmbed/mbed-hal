@@ -55,7 +55,7 @@ template = '''
 indent = '    '
 pin_array = []
 
-if pins is dict:
+if isinstance(pins, dict):
     while len(pins.keys()):
         for pin in pins.keys()[:]:
             if pins[pin] in pins.keys():
