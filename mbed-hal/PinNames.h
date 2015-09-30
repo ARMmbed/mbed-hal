@@ -14,21 +14,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef MBED_PINMAP_H
-#define MBED_PINMAP_H
+#ifndef MBED_HAL_PINNAMES_H
+#define MBED_HAL_PINNAMES_H
 
-#include "mbed-hal/PinNames.h"
-#include "pinmap_common.h"
+#include "cmsis.h"
 
-#ifdef __cplusplus
+#ifdef YOTTA_CFG_HARDWARE_PINS
+#   include "mbed-hal/PinDefs.h"
+#   ifdef __cplusplus
 extern "C" {
-#endif
-
-void pin_function(PinName pin, int function);
-void pin_mode(PinName pin, PinMode mode);
-
-#ifdef __cplusplus
+#   endif
+typedef enum {
+    // Not connected
+    NC = (int)0xFFFFFFFF,
+#   include "mbed-hal/chip_pins.array"
+#   include "mbed-hal/pins.array"
+} PinName;
+#   ifdef __cplusplus
 }
+#   endif
+#else
+#   include "PinNames.h"
 #endif
 
-#endif
+
+#endif // MBED_HAL_PINNAMES_H

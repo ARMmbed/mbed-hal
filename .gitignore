@@ -4,3 +4,4 @@ yotta_modules
 upload.tar.gz
 .DS_Store
 .yotta.json
+generated/
