@@ -14,8 +14,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef MBED_PINNAMES_H
-#define MBED_PINNAMES_H
+#ifndef MBED_HAL_PINNAMES_H
+#define MBED_HAL_PINNAMES_H
 
 #include "cmsis.h"
 
@@ -38,4 +38,4 @@ typedef enum {
 #endif
 
 
-#endif // MBED_PINNAMES_H
+#endif // MBED_HAL_PINNAMES_H
