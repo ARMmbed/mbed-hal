@@ -17,7 +17,7 @@
 #ifndef MBED_PINMAP_H
 #define MBED_PINMAP_H
 
-#include "mbed-hal/PinNames.h"
+#include "PinNames.h"
 #include "pinmap_common.h"
 
 #ifdef __cplusplus
