@@ -12,7 +12,11 @@ set_source_files_properties("../mbed-hal/PinNames.h" PROPERTIES HEADER_FILE_ONLY
 set_source_files_properties("pins.c" PROPERTIES
                             OBJECT_DEPENDS "${pinFile}")
 
-add_custom_target(pinNames ALL DEPENDS "${pinFile}" "${YOTTA_CONFIG_MERGED_JSON_FILE}")
+add_custom_target(mbed-hal_pinnames ALL DEPENDS "${pinFile}" "${YOTTA_CONFIG_MERGED_JSON_FILE}")
+
+# make sure mbed-hal depends on the dummy pinNames target, so that even if
+# "ALL" isn't being built, the pins file still gets generated
+add_dependencies(mbed-hal mbed-hal_pinnames)
 
 add_custom_command(OUTPUT "${pinFile}"
                   MAIN_DEPENDENCY "${YOTTA_CONFIG_MERGED_JSON_FILE}"
