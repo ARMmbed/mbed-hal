@@ -27,7 +27,7 @@
       "mbed-hal-freescale": "~0.6.0"
     },
     "st": {
-      "mbed-hal-st": "~0.6.0"
+      "mbed-hal-st": "~0.7.0"
     },
     "nordic": {
       "mbed-hal-nordic": "~0.0.1"
