@@ -231,7 +231,7 @@ void serial_set_flow_control(serial_t *obj, FlowControl type, PinName rxflow, Pi
  * @param obj       The serial object
  * @param tx        The buffer for sending
  * @param tx_length The number of words to transmit
- * @param tx_width  The bit width of buffer word
+ * @param tx_width  TODO: deprecated, not used
  * @param handler   The serial handler
  * @param event     The logical OR of events to be registered
  * @param hint      A suggestion for how to use DMA with this transfer
@@ -245,7 +245,7 @@ int serial_tx_asynch(serial_t *obj, void *tx, size_t tx_length, uint8_t tx_width
  * @param obj        The serial object
  * @param rx         The buffer for sending
  * @param rx_length  The number of words to transmit
- * @param rx_width   The bit width of buffer word
+ * @param rx_width   TODO: deprecated, not used
  * @param handler    The serial handler
  * @param event      The logical OR of events to be registered
  * @param handler    The serial handler
