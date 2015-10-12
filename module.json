@@ -31,6 +31,9 @@
     },
     "nordic": {
       "mbed-hal-nordic": "~0.0.1"
+    },
+    "cordio" : {
+      "mbed-hal-cordio": "~0.0.1"
     }
   }
 }
