@@ -16,6 +16,7 @@
 #ifndef MBED_TICKER_API_H
 #define MBED_TICKER_API_H
 
+#include <stdint.h>
 #include "device.h"
 
 typedef uint32_t timestamp_t;
