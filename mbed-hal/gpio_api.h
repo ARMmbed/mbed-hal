@@ -16,6 +16,7 @@
 #ifndef MBED_GPIO_API_H
 #define MBED_GPIO_API_H
 
+#include <stdint.h>
 #include "device.h"
 
 #ifdef __cplusplus
