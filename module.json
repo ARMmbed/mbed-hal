@@ -4,7 +4,8 @@
   "description": "mbed low-level Hardware Abstraction Layer",
   "keywords": [
     "mbed",
-    "HAL"
+    "HAL",
+    "mbed-official"
   ],
   "author": "Martin Kojtal <martin.kojtal@arm.com>",
   "repository": {
@@ -24,13 +25,13 @@
       "mbed-hal-silabs": "~0.4.0"
     },
     "freescale": {
-      "mbed-hal-freescale": "~0.6.0"
+      "mbed-hal-freescale": "^1.0.0"
     },
     "st": {
-      "mbed-hal-st": "~0.7.0"
+      "mbed-hal-st": "^1.0.0"
     },
     "nordic": {
-      "mbed-hal-nordic": "~0.0.1"
+      "mbed-hal-nordic": "^1.0.0"
     }
   }
 }
