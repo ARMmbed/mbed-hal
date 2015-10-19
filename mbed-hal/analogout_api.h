@@ -1,5 +1,5 @@
 /* mbed Microcontroller Library
- * Copyright (c) 2006-2013 ARM Limited
+ * Copyright (c) 2006-2015 ARM Limited
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,14 +24,53 @@
 extern "C" {
 #endif
 
+/** Analogout hal structure. dac_s is declared in the target's hal
+ */
 typedef struct dac_s dac_t;
 
-void     analogout_init     (dac_t *obj, PinName pin);
-void     analogout_free     (dac_t *obj);
-void     analogout_write    (dac_t *obj, float value);
-void     analogout_write_u16(dac_t *obj, uint16_t value);
-float    analogout_read     (dac_t *obj);
-uint16_t analogout_read_u16 (dac_t *obj);
+/** Initialize the analogout peripheral
+ *
+ * Configures the pin used by analogout.
+ * @param[out] obj The analogout object to initialize
+ * @param[in]  pin The analogout pin
+ */
+void analogout_init(dac_t *obj, PinName pin);
+
+/** Release the analogout object
+ *
+ * Warning: This is not currently used in the mbed-drivers
+ * @param[in] obj The analogout object
+ */
+void analogout_free(dac_t *obj);
+
+/** Set the output voltage, specified as a percentage (float)
+ *
+ * @param[in] obj The analogin object
+ * @param[in] value The floating-point output voltage to be set
+ */
+void analogout_write(dac_t *obj, float value);
+
+/** Set the output voltage, specified as a percentage (float)
+ *
+ * @param[in] obj The analogin object
+ * @param[in] value The unsigned 16-bit output voltage to be set
+ */
+void analogout_write_u16(dac_t *obj, uint16_t value);
+
+/** Read the current voltage value on the pin, as a float percentage
+ *
+ * @param[in] obj The analogin object
+ * @return A floating-point value representing the current voltage on the pin,
+ *     measured as a percentage
+ */
+float analogout_read(dac_t *obj);
+
+/** Read the current voltage value on the pin, as a normalized unsigned 16bit value
+ *
+ * @param[in] obj The analogin object
+ * @return An unsigned 16-bit value representing the current voltage on the pin
+ */
+uint16_t analogout_read_u16(dac_t *obj);
 
 #ifdef __cplusplus
 }
