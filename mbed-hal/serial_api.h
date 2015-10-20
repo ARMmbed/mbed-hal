@@ -230,11 +230,11 @@ void serial_set_flow_control(serial_t *obj, FlowControl type, PinName rxflow, Pi
  *
  * @param obj       The serial object
  * @param tx        The buffer for sending
- * @param tx_length The number of words to transmit
- * @param tx_width  TODO: deprecated, not used
+ * @param tx_length The number of bytes to transmit
+ * @param tx_width  Deprecated argument
  * @param handler   The serial handler
  * @param event     The logical OR of events to be registered
- * @param hint      A suggestion for how to use DMA with this transfer
+ * @param hint      Deprecated argument
  * @return Returns number of data transfered, or 0 otherwise
  */
 int serial_tx_asynch(serial_t *obj, void *tx, size_t tx_length, uint8_t tx_width, uint32_t handler, uint32_t event, DMAUsage hint);
@@ -244,13 +244,13 @@ int serial_tx_asynch(serial_t *obj, void *tx, size_t tx_length, uint8_t tx_width
  *
  * @param obj        The serial object
  * @param rx         The buffer for sending
- * @param rx_length  The number of words to transmit
- * @param rx_width   TODO: deprecated, not used
+ * @param rx_length  The number of bytes to transmit
+ * @param rx_width   Deprecated argument
  * @param handler    The serial handler
  * @param event      The logical OR of events to be registered
  * @param handler    The serial handler
  * @param char_match A character in range 0-254 to be matched
- * @param hint       A suggestion for how to use DMA with this transfer
+ * @param hint       Deprecated argument
  */
 void serial_rx_asynch(serial_t *obj, void *rx, size_t rx_length, uint8_t rx_width, uint32_t handler, uint32_t event, uint8_t char_match, DMAUsage hint);
 
