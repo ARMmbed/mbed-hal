@@ -141,13 +141,13 @@ int  i2c_byte_write(i2c_t *obj, int data);
 /** Start i2c asynchronous transfer.
  *  @param obj       The I2C object
  *  @param tx        The buffer to send
- *  @param tx_length The number of words to transmit
+ *  @param tx_length The number of bytes to transmit
  *  @param rx        The buffer to receive
- *  @param rx_length The number of words to receive
+ *  @param rx_length The number of bytes to receive
  *  @param address   The address to be set - 7bit or 9 bit
  *  @param stop      If true, stop will be generated after the transfer is done
  *  @param handler   The I2C IRQ handler to be set
- *  @param hint      DMA hint usage
+ *  @param hint      Deprecated argument
  */
 void i2c_transfer_asynch(i2c_t *obj, void *tx, size_t tx_length, void *rx, size_t rx_length, uint32_t address, uint32_t stop, uint32_t handler, uint32_t event, DMAUsage hint);
 
