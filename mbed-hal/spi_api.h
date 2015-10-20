@@ -142,13 +142,13 @@ uint8_t spi_get_module(spi_t *obj);
  *
  * @param[in] obj       The SPI object which holds the transfer information
  * @param[in] tx        The buffer to send
- * @param[in] tx_length The number of words to transmit
+ * @param[in] tx_length The number of bytes to transmit
  * @param[in] rx        The buffer to receive
- * @param[in] rx_length The number of words to receive
- * @param[in] bit_width The bit width of buffer words
+ * @param[in] rx_length The number of bytes to receive
+ * @param[in] bit_width Deprecated argument
  * @param[in] event     The logical OR of events to be registered
  * @param[in] handler   SPI interrupt handler
- * @param[in] hint      A suggestion for how to use DMA with this transfer
+ * @param[in] hint      Deprecated argument
  */
 void spi_master_transfer(spi_t *obj, void *tx, size_t tx_length, void *rx, size_t rx_length, uint32_t handler, uint32_t event, DMAUsage hint);
 
