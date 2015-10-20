@@ -31,21 +31,21 @@ typedef struct analogin_s analogin_t;
 /** Initialize the analogin peripheral
  *
  * Configures the pin used by analogin.
- * @param[out] obj The analogin object to initialize
- * @param[in]  pin The analogin pin
+ * @param obj The analogin object to initialize
+ * @param pin The analogin pin
  */
 void analogin_init(analogin_t *obj, PinName pin);
 
 /** Read the input voltage, represented as a float in the range [0.0, 1.0]
  *
- * @param[in] obj The analogin object
+ * @param obj The analogin object
  * @return A floating value representing the current input voltage
  */
 float analogin_read(analogin_t *obj);
 
 /** Read the value from analogin pin, represented as a unsigned 16bit value
  *
- * @param[in] obj The analogin object
+ * @param obj The analogin object
  * @return An unsigned 16bit value representing the current input voltage
  */
 uint16_t analogin_read_u16(analogin_t *obj);
