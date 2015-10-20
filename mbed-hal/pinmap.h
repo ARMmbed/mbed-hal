@@ -18,7 +18,7 @@
 #define MBED_PINMAP_H
 
 #include "PinNames.h"
-#include "pinmap_common.h"
+#include "mbed-drivers/pinmap_common.h"
 
 #ifdef __cplusplus
 extern "C" {
