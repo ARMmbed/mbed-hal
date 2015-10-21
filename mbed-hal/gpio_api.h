@@ -1,5 +1,5 @@
 /* mbed Microcontroller Library
- * Copyright (c) 2006-2013 ARM Limited
+ * Copyright (c) 2006-2015 ARM Limited
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@
 extern "C" {
 #endif
 
-/* Set the given pin as GPIO
+/** Set the given pin as GPIO
+ *
  * @param pin The pin to be set as GPIO
  * @return The GPIO port mask for this pin
  **/
@@ -36,24 +37,24 @@ uint32_t gpio_set(PinName pin);
  */
 void gpio_init(gpio_t *obj, PinName pin);
 
-/** set the input pin mode
+/** Set the input pin mode
  *
  * @param obj  The gpio object
  * @param mode The pin mode
  */
-void gpio_mode (gpio_t *obj, PinMode mode);
+void gpio_mode(gpio_t *obj, PinMode mode);
 
-/** set the input pin mode
+/** Set the pin direction
  *
- * @param obj  The gpio object
- * @param mode The pin mode
+ * @param obj       The gpio object
+ * @param direction The pin direction
  */
 void gpio_dir(gpio_t *obj, PinDirection direction);
 
 /** Set the output value
  *
- * @param obj  The gpio object
- * @param mode The pin mode
+ * @param obj   The gpio object
+ * @param value The value to be set
  */
 void gpio_write(gpio_t *obj, int value);
 
@@ -65,7 +66,7 @@ void gpio_write(gpio_t *obj, int value);
 int gpio_read(gpio_t *obj);
 
 // the following set of functions are generic and are implemented in the common gpio.c file
-// TODO: fix, will be moved to the common gpio header file.
+// TODO: fix, will be moved to the common gpio header file
 
 /** Init the input pin and set mode to pull default
  *
@@ -97,7 +98,7 @@ void gpio_init_out(gpio_t* gpio, PinName pin);
  */
 void gpio_init_out_ex(gpio_t* gpio, PinName pin, int value);
 
-/** Init the pin to be in/out.
+/** Init the pin to be in/out
  *
  * @param obj       The gpio object
  * @param pin       The pin name
