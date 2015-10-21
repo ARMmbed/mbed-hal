@@ -34,7 +34,7 @@
       "mbed-hal-nordic": "^1.0.0"
     },
     "cordio" : {
-      "mbed-hal-cordio": "~0.0.4"
+      "mbed-hal-cordio": "~0.0.5"
     }
   }
 }
