@@ -1,5 +1,5 @@
 /* mbed Microcontroller Library
- * Copyright (c) 2006-2013 ARM Limited
+ * Copyright (c) 2006-2015 ARM Limited
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,20 +32,49 @@ typedef enum {
     IRQ_FALL
 } gpio_irq_event;
 
-/** gpio hal structure. gpio_irq_s is declared in the target's hal
+/** gpio irq hal structure. gpio_irq_s is declared in the target's hal
  */
 typedef struct gpio_irq_s gpio_irq_t;
 
 typedef void (*gpio_irq_handler)(uint32_t id, gpio_irq_event event);
 
+/** Initialize the gpio irq pin
+ *
+ * @param obj     The gpio object to initialize
+ * @param pin     The gpio pin
+ * @param handler The handler to be attached to gpio irq
+ * @param id      The object id
+ * @return -1 if pin is NC, 0 otherwise
+ */
 int gpio_irq_init(gpio_irq_t *obj, PinName pin, gpio_irq_handler handler, uint32_t id);
 
+/** Release the gpio irq pin
+ *
+ * @param obj The gpio object
+ */
 void gpio_irq_free(gpio_irq_t *obj);
 
+/** Enable/disable pin irq event
+ *
+ * @param obj    The gpio object
+ * @param event  The gpio irq event
+ * @param enable The boolean enable flag
+ */
 void gpio_irq_set(gpio_irq_t *obj, gpio_irq_event event, uint32_t enable);
 
+/** Enable IRQ
+ *
+ * This is target dependent, as it might enable entire port or just a pin
+ * @param obj The gpio object
+ */
 void gpio_irq_enable(gpio_irq_t *obj);
 
+/** Disable IRQ
+ *
+ * This is target dependent, as it might disable entire port or just a pin
+ * @param obj The gpio object
+ * @param pin The gpio pin
+ */
 void gpio_irq_disable(gpio_irq_t *obj);
 
 #ifdef __cplusplus
