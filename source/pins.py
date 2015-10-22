@@ -57,8 +57,8 @@ pin_array = []
 
 if isinstance(pins, dict):
     while len(pins.keys()):
-        for pin in pins.keys()[:]:
-            if pins[pin] in pins.keys():
+        for pin in list(pins.keys())[:]:
+            if pins[pin] in list(pins.keys()):
                 continue
             pin_array += ['{key} = {value}'.format(key=pin, value=pins[pin])]
             del pins[pin]
