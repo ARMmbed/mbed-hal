@@ -24,6 +24,8 @@
 extern "C" {
 #endif
 
+/** sleep hal structure. sleep_s is declared in the target's hal
+ */
 typedef struct sleep_s sleep_t;
 
 /** Enter a sleep mode.
