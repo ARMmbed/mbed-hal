@@ -28,6 +28,11 @@ extern "C" {
  */
 typedef struct sleep_s sleep_t;
 
+/**
+ * \defgroup hal_sleep Sleep hal functions
+ * @{
+ */
+
 /** Enter a sleep mode.
  *
  * @param obj The sleep object which stores required data to restore from sleep
@@ -39,6 +44,8 @@ void mbed_enter_sleep(sleep_t *obj);
  * @param obj The sleep object which stores required data to restore from sleep
  */
 void mbed_exit_sleep(sleep_t *obj);
+
+/**@}*/
 
 #ifdef __cplusplus
 }

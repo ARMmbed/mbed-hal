@@ -26,6 +26,11 @@
 extern "C" {
 #endif
 
+/**
+ * \defgroup hal_rtc RTC hal functions
+ * @{
+ */
+
 /** Initialize the RTC peripheral
  *
  */
@@ -55,6 +60,8 @@ time_t rtc_read(void);
  *  @param t The current time to be set
  */
 void rtc_write(time_t t);
+
+/**@}*/
 
 #ifdef __cplusplus
 }

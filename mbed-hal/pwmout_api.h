@@ -26,6 +26,11 @@ extern "C" {
 
 typedef struct pwmout_s pwmout_t;
 
+/**
+ * \defgroup hal_pwmout Pwmout hal functions
+ * @{
+ */
+
 /** Initialize the pwm out peripheral and configure the pin
  *
  * @param obj The pwmout object to initialize
@@ -96,6 +101,8 @@ void pwmout_pulsewidth_ms(pwmout_t *obj, int ms);
  * @param us  The floating-point pulsewidth in microseconds
  */
 void pwmout_pulsewidth_us(pwmout_t *obj, int us);
+
+/**@}*/
 
 #ifdef __cplusplus
 }

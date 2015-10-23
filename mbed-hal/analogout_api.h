@@ -28,6 +28,11 @@ extern "C" {
  */
 typedef struct dac_s dac_t;
 
+/**
+ * \defgroup hal_analogout Analogout hal functions
+ * @{
+ */
+
 /** Initialize the analogout peripheral
  *
  * Configures the pin used by analogout.
@@ -71,6 +76,8 @@ float analogout_read(dac_t *obj);
  * @return An unsigned 16-bit value representing the current voltage on the pin
  */
 uint16_t analogout_read_u16(dac_t *obj);
+
+/**@}*/
 
 #ifdef __cplusplus
 }

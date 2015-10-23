@@ -28,6 +28,11 @@ extern "C" {
  */
 typedef struct analogin_s analogin_t;
 
+/**
+ * \defgroup hal_analogin Analogin hal functions
+ * @{
+ */
+
 /** Initialize the analogin peripheral
  *
  * Configures the pin used by analogin.
@@ -49,6 +54,8 @@ float analogin_read(analogin_t *obj);
  * @return An unsigned 16bit value representing the current input voltage
  */
 uint16_t analogin_read_u16(analogin_t *obj);
+
+/**@}*/
 
 #ifdef __cplusplus
 }

@@ -23,6 +23,11 @@
 extern "C" {
 #endif
 
+/**
+ * \defgroup hal_gpio Gpio hal functions
+ * @{
+ */
+
 /** Set the given pin as GPIO
  *
  * @param pin The pin to be set as GPIO
@@ -107,6 +112,8 @@ void gpio_init_out_ex(gpio_t* gpio, PinName pin, int value);
  * @param value     The value to be set for an output pin
  */
 void gpio_init_inout(gpio_t* gpio, PinName pin, PinDirection direction, PinMode mode, int value);
+
+/**@}*/
 
 #ifdef __cplusplus
 }

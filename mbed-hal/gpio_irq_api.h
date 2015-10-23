@@ -38,6 +38,11 @@ typedef struct gpio_irq_s gpio_irq_t;
 
 typedef void (*gpio_irq_handler)(uint32_t id, gpio_irq_event event);
 
+/**
+ * \defgroup hal_gpioirq Gpio irq hal functions
+ * @{
+ */
+
 /** Initialize the gpio irq pin
  *
  * @param obj     The gpio object to initialize
@@ -76,6 +81,8 @@ void gpio_irq_enable(gpio_irq_t *obj);
  * @param pin The gpio pin
  */
 void gpio_irq_disable(gpio_irq_t *obj);
+
+/**@}*/
 
 #ifdef __cplusplus
 }

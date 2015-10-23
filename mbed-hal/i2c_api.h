@@ -22,7 +22,7 @@
 #if DEVICE_I2C
 
 /**
- * @defgroup I2CEvents I2C Events Macros
+ * @defgroup hal_I2CEvents I2C Events Macros
  *
  * @{
  */
@@ -60,7 +60,7 @@ extern "C" {
 #endif
 
 /**
- * \defgroup GeneralI2C I2C Configuration Functions
+ * \defgroup hal_GeneralI2C I2C Configuration Functions
  * @{
  */
 
@@ -143,7 +143,7 @@ int i2c_byte_write(i2c_t *obj, int data);
 #if DEVICE_I2C_ASYNCH
 
 /**
- * \defgroup AsynchI2C Asynchronous I2C Hardware Abstraction Layer
+ * \defgroup hal_AsynchI2C Asynchronous I2C Hardware Abstraction Layer
  * @{
  */
 

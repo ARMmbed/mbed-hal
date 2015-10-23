@@ -102,7 +102,7 @@ extern "C" {
 #endif
 
 /**
- * \defgroup GeneralSerial Serial Configuration Functions
+ * \defgroup hal_GeneralSerial Serial Configuration Functions
  * @{
  */
 
@@ -221,7 +221,7 @@ void serial_set_flow_control(serial_t *obj, FlowControl type, PinName rxflow, Pi
 /**@}*/
 
 /**
- * \defgroup AsynchSerial Asynchronous Serial Hardware Abstraction Layer
+ * \defgroup hal_AsynchSerial Asynchronous Serial Hardware Abstraction Layer
  * @{
  */
 

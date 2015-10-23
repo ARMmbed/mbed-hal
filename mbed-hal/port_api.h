@@ -28,6 +28,11 @@ extern "C" {
  */
 typedef struct port_s port_t;
 
+/**
+ * \defgroup hal_port Port hal functions
+ * @{
+ */
+
 /** Get the pin name from port's pin number
  *
  * @param obj   The port object
@@ -72,6 +77,8 @@ void port_write(port_t *obj, int value);
  * @return An integer with each bit corresponding to associated port pin setting
  */
 int port_read(port_t *obj);
+
+/**@}*/
 
 #ifdef __cplusplus
 }

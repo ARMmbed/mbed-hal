@@ -24,6 +24,11 @@
 extern "C" {
 #endif
 
+/**
+ * \defgroup hal_pin Pin hal functions
+ * @{
+ */
+
 /** Set the pin function
  *
  *  @param obj The pin
@@ -37,6 +42,8 @@ void pin_function(PinName pin, int function);
  *  @param mode The pin mode
  */
 void pin_mode(PinName pin, PinMode mode);
+
+/**@}*/
 
 #ifdef __cplusplus
 }

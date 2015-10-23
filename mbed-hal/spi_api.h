@@ -57,7 +57,7 @@ extern "C" {
 #endif
 
 /**
- * \defgroup GeneralSPI SPI Configuration Functions
+ * \defgroup hal_GeneralSPI SPI Configuration Functions
  * @{
  */
 
