@@ -43,7 +43,7 @@ void analogout_init(dac_t *obj, PinName pin);
 
 /** Release the analogout object
  *
- * Warning: This is not currently used in the mbed-drivers
+ * Note: This is not currently used in the mbed-drivers
  * @param obj The analogout object
  */
 void analogout_free(dac_t *obj);
@@ -55,14 +55,14 @@ void analogout_free(dac_t *obj);
  */
 void analogout_write(dac_t *obj, float value);
 
-/** Set the output voltage, specified as a percentage (float)
+/** Set the output voltage, specified as unsigned 16-bit
  *
  * @param obj The analogin object
  * @param value The unsigned 16-bit output voltage to be set
  */
 void analogout_write_u16(dac_t *obj, uint16_t value);
 
-/** Read the current voltage value on the pin, as a float percentage
+/** Read the current voltage value on the pin
  *
  * @param obj The analogin object
  * @return A floating-point value representing the current voltage on the pin,

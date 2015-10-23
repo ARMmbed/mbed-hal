@@ -177,8 +177,7 @@ uint8_t i2c_active(i2c_t *obj);
 
 /** Abort asynchronous transfer
  *
- *  This function does not perform any check, should happen by upper layers.
- *  It should stop the asynch transfer.
+ *  This function does not perform any check, should happen in upper layers.
  *  @param obj The I2C object
  */
 void i2c_abort_asynch(i2c_t *obj);

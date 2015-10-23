@@ -18,7 +18,7 @@
 
 #include <stdint.h>
 
-// TODO: deprecated. DMA support to mbed-hal will be added
+// TODO: deprecated. DMA support will be added to mbed-hal
 
 #define DMA_ERROR_OUT_OF_CHANNELS (-1)
 

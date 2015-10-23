@@ -24,6 +24,8 @@
 extern "C" {
 #endif
 
+/** Pwmout hal structure. pwmout_s is declared in the target's hal
+ */
 typedef struct pwmout_s pwmout_t;
 
 /**

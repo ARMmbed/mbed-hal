@@ -63,7 +63,7 @@ void gpio_irq_free(gpio_irq_t *obj);
  *
  * @param obj    The gpio object
  * @param event  The gpio irq event
- * @param enable The boolean enable flag
+ * @param enable The enable flag
  */
 void gpio_irq_set(gpio_irq_t *obj, gpio_irq_event event, uint32_t enable);
 
@@ -78,7 +78,6 @@ void gpio_irq_enable(gpio_irq_t *obj);
  *
  * This is target dependent, as it might disable entire port or just a pin
  * @param obj The gpio object
- * @param pin The gpio pin
  */
 void gpio_irq_disable(gpio_irq_t *obj);
 
