@@ -33,7 +33,7 @@ typedef struct sleep_s sleep_t;
  * @{
  */
 
-/** Enter a sleep mode.
+/** Enter the sleep mode
  *
  * @param obj The sleep object which stores required data to restore from sleep
  */

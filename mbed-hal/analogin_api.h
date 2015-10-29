@@ -37,7 +37,7 @@ typedef struct analogin_s analogin_t;
  *
  * Configures the pin used by analogin.
  * @param obj The analogin object to initialize
- * @param pin The analogin pin
+ * @param pin The analogin pin name
  */
 void analogin_init(analogin_t *obj, PinName pin);
 

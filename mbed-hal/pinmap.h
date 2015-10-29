@@ -31,15 +31,15 @@ extern "C" {
 
 /** Set the pin function
  *
- * @param obj The pin
+ * @param pin      The pin name
  * @param function The function value
  */
 void pin_function(PinName pin, int function);
 
 /** Set pin mode
  *
- * @param obj The pin
- * @param mode The pin mode
+ * @param pin  The pin name
+ * @param mode The pin mode to be set
  */
 void pin_mode(PinName pin, PinMode mode);
 

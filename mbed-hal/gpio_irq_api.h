@@ -46,7 +46,7 @@ typedef void (*gpio_irq_handler)(uint32_t id, gpio_irq_event event);
 /** Initialize the gpio irq pin
  *
  * @param obj     The gpio object to initialize
- * @param pin     The gpio pin
+ * @param pin     The gpio pin name
  * @param handler The handler to be attached to gpio irq
  * @param id      The object id
  * @return -1 if pin is NC, 0 otherwise
@@ -67,14 +67,14 @@ void gpio_irq_free(gpio_irq_t *obj);
  */
 void gpio_irq_set(gpio_irq_t *obj, gpio_irq_event event, uint32_t enable);
 
-/** Enable IRQ
+/** Enable gpio IRQ
  *
  * This is target dependent, as it might enable entire port or just a pin
  * @param obj The gpio object
  */
 void gpio_irq_enable(gpio_irq_t *obj);
 
-/** Disable IRQ
+/** Disable gpio IRQ
  *
  * This is target dependent, as it might disable entire port or just a pin
  * @param obj The gpio object

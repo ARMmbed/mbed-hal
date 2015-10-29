@@ -37,7 +37,7 @@ typedef struct dac_s dac_t;
  *
  * Configures the pin used by analogout.
  * @param obj The analogout object to initialize
- * @param pin The analogout pin
+ * @param pin The analogout pin name
  */
 void analogout_init(dac_t *obj, PinName pin);
 

@@ -27,7 +27,7 @@ extern "C" {
  * @{
  */
 
-/** This function should implement hal specific initialization.
+/** This function should implement hal specific initialization
  *
  * It runs before the application starts.
  */

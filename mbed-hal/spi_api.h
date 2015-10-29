@@ -141,9 +141,9 @@ uint8_t spi_get_module(spi_t *obj);
 /** Begin the SPI transfer. Buffer pointers and lengths are specified in tx_buff and rx_buff
  *
  * @param[in] obj       The SPI object which holds the transfer information
- * @param[in] tx        The buffer to send
+ * @param[in] tx        The transmit buffer
  * @param[in] tx_length The number of bytes to transmit
- * @param[in] rx        The buffer to receive
+ * @param[in] rx        The receive buffer
  * @param[in] rx_length The number of bytes to receive
  * @param[in] bit_width Deprecated argument
  * @param[in] event     The logical OR of events to be registered
@@ -163,10 +163,7 @@ uint32_t spi_irq_handler_asynch(spi_t *obj);
 
 /** Attempts to determine if the SPI peripheral is already in use.
  *
- * If a temporary DMA channel has been allocated, peripheral is in use.
- * If a permanent DMA channel has been allocated, check if the DMA channel is in use.  If not, proceed as though no DMA
- * channel were allocated.
- * If no DMA channel is allocated, check whether tx and rx buffers have been assigned.  For each assigned buffer, check
+ * For each assigned buffer, check
  * if the corresponding buffer position is less than the buffer length.  If buffers do not indicate activity, check if
  * there are any bytes in the FIFOs.
  * @param[in] obj The SPI object to check for activity

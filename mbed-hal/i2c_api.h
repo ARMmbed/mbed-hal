@@ -150,9 +150,9 @@ int i2c_byte_write(i2c_t *obj, int data);
 /** Start i2c asynchronous transfer
  *
  *  @param obj       The I2C object
- *  @param tx        The buffer to send
+ *  @param tx        The transmit buffer
  *  @param tx_length The number of bytes to transmit
- *  @param rx        The buffer to receive
+ *  @param rx        The receive buffer
  *  @param rx_length The number of bytes to receive
  *  @param address   The address to be set - 7bit or 9 bit
  *  @param stop      If true, stop will be generated after the transfer is done

@@ -36,7 +36,7 @@ typedef struct pwmout_s pwmout_t;
 /** Initialize the pwm out peripheral and configure the pin
  *
  * @param obj The pwmout object to initialize
- * @param pin The pwmout pin
+ * @param pin The pwmout pin to initialize
  */
 void pwmout_init(pwmout_t *obj, PinName pin);
 
