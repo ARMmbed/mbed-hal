@@ -1,6 +1,6 @@
 {
   "name": "mbed-hal",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "mbed low-level Hardware Abstraction Layer",
   "keywords": [
     "mbed",
