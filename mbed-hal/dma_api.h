@@ -18,6 +18,8 @@
 
 #include <stdint.h>
 
+// TODO: deprecated. DMA support will be added to mbed-hal
+
 #define DMA_ERROR_OUT_OF_CHANNELS (-1)
 
 typedef enum {

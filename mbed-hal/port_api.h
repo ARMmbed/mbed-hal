@@ -1,5 +1,5 @@
 /* mbed Microcontroller Library
- * Copyright (c) 2006-2013 ARM Limited
+ * Copyright (c) 2006-2015 ARM Limited
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,15 +24,61 @@
 extern "C" {
 #endif
 
+/** port hal structure. port_s is declared in the target's hal
+ */
 typedef struct port_s port_t;
 
+/**
+ * \defgroup hal_port Port hal functions
+ * @{
+ */
+
+/** Get the pin name from port's pin number
+ *
+ * @param port  The port name
+ * @param pin_n The pin number within the specified port
+ * @return The pin name for port's pin number
+ */
 PinName port_pin(PortName port, int pin_n);
 
-void port_init (port_t *obj, PortName port, int mask, PinDirection dir);
-void port_mode (port_t *obj, PinMode mode);
-void port_dir  (port_t *obj, PinDirection dir);
+/** Initilize the port
+ *
+ * @param obj  The port object to initialize
+ * @param port The port name
+ * @param mask The bitmask to identify which bits in the port should be included (0 - ignore)
+ * @param dir  The port direction
+ */
+void port_init(port_t *obj, PortName port, int mask, PinDirection dir);
+
+/** Set the input port mode
+ *
+ * @param obj  The port object
+ * @param mode THe port mode to be set
+ */
+void port_mode(port_t *obj, PinMode mode);
+
+/** Set port direction (in/out)
+ *
+ * @param obj The port object
+ * @param dir The port direction to be set
+ */
+void port_dir(port_t *obj, PinDirection dir);
+
+/** Write value to the port
+ *
+ * @param obj   The port object
+ * @param value The value to be set
+ */
 void port_write(port_t *obj, int value);
-int  port_read (port_t *obj);
+
+/** Read the current value on the port
+ *
+ * @param obj The port object
+ * @return An integer with each bit corresponding to associated port pin setting
+ */
+int port_read(port_t *obj);
+
+/**@}*/
 
 #ifdef __cplusplus
 }

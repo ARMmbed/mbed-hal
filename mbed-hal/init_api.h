@@ -21,11 +21,19 @@
 extern "C" {
 #endif
 
-/** This function should implement hal specific initialization.
+/**
+ * @defgroup hal_init Init hal functions
+ *
+ * @{
+ */
+
+/** This function should implement hal specific initialization
  *
  * It runs before the application starts.
  */
 void mbed_hal_init(void);
+
+/**@}*/
 
 #ifdef __cplusplus
 }

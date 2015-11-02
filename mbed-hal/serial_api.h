@@ -102,7 +102,7 @@ extern "C" {
 #endif
 
 /**
- * \defgroup GeneralSerial Serial Configuration Functions
+ * \defgroup hal_GeneralSerial Serial Configuration Functions
  * @{
  */
 
@@ -110,8 +110,8 @@ extern "C" {
  *  peripheral, and configure its specifieds pins.
  *
  * @param obj The serial object
- * @param tx  The TX pin
- * @param rx  The RX pin
+ * @param tx  The TX pin name
+ * @param rx  The RX pin name
  */
 void serial_init(serial_t *obj, PinName tx, PinName rx);
 
@@ -202,7 +202,7 @@ void serial_break_clear(serial_t *obj);
 
 /** Configure the TX pin for UART function.
  *
- * @param tx The pin used for TX
+ * @param tx The pin name used for TX
  */
 void serial_pinout_tx(PinName tx);
 
@@ -211,8 +211,8 @@ void serial_pinout_tx(PinName tx);
  *
  * @param obj    The serial object
  * @param type   The type of the flow control. Look at the available FlowControl types.
- * @param rxflow The tx pin
- * @param txflow The rx pin
+ * @param rxflow The tx pin name
+ * @param txflow The rx pin name
  */
 void serial_set_flow_control(serial_t *obj, FlowControl type, PinName rxflow, PinName txflow);
 
@@ -221,7 +221,7 @@ void serial_set_flow_control(serial_t *obj, FlowControl type, PinName rxflow, Pi
 /**@}*/
 
 /**
- * \defgroup AsynchSerial Asynchronous Serial Hardware Abstraction Layer
+ * \defgroup hal_AsynchSerial Asynchronous Serial Hardware Abstraction Layer
  * @{
  */
 
@@ -229,7 +229,7 @@ void serial_set_flow_control(serial_t *obj, FlowControl type, PinName rxflow, Pi
  *  tx_buff
  *
  * @param obj       The serial object
- * @param tx        The buffer for sending
+ * @param tx        The transmit buffer
  * @param tx_length The number of bytes to transmit
  * @param tx_width  Deprecated argument
  * @param handler   The serial handler
@@ -243,8 +243,8 @@ int serial_tx_asynch(serial_t *obj, void *tx, size_t tx_length, uint8_t tx_width
  *  The used buffer is specified in the serial object - rx_buff
  *
  * @param obj        The serial object
- * @param rx         The buffer for sending
- * @param rx_length  The number of bytes to transmit
+ * @param rx         The receive buffer
+ * @param rx_length  The number of bytes to receive
  * @param rx_width   Deprecated argument
  * @param handler    The serial handler
  * @param event      The logical OR of events to be registered

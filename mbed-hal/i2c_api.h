@@ -22,7 +22,7 @@
 #if DEVICE_I2C
 
 /**
- * @defgroup I2CEvents I2C Events Macros
+ * @defgroup hal_I2CEvents I2C Events Macros
  *
  * @{
  */
@@ -60,11 +60,12 @@ extern "C" {
 #endif
 
 /**
- * \defgroup GeneralI2C I2C Configuration Functions
+ * \defgroup hal_GeneralI2C I2C Configuration Functions
  * @{
  */
 
 /** Initialize the I2C peripheral. It sets the default parameters for I2C
+ *
  *  peripheral, and configure its specifieds pins.
  *  @param obj  The i2c object
  *  @param sda  The sda pin
@@ -72,23 +73,27 @@ extern "C" {
  */
 void i2c_init(i2c_t *obj, PinName sda, PinName scl);
 
-/** Configure the I2C frequency.
+/** Configure the I2C frequency
+ *
  *  @param obj The i2c object
  *  @param hz  Frequency in Hz
  */
 void i2c_frequency(i2c_t *obj, int hz);
 
-/** Send START command.
+/** Send START command
+ *
  *  @param obj The i2c object
  */
 int  i2c_start(i2c_t *obj);
 
-/** Send STOP command.
+/** Send STOP command
+ *
  *  @param obj The i2c object
  */
 int  i2c_stop(i2c_t *obj);
 
-/** Blocking reading data.
+/** Blocking reading data
+ *
  *  @param obj     The i2c object
  *  @param address 7-bit address (last bit is 1)
  *  @param data    The buffer for receiving
@@ -96,9 +101,10 @@ int  i2c_stop(i2c_t *obj);
  *  @param stop    Stop to be generated after the transfer is done
  *  @return Number of read bytes
  */
-int  i2c_read(i2c_t *obj, int address, char *data, int length, int stop);
+int i2c_read(i2c_t *obj, int address, char *data, int length, int stop);
 
-/** Blocking sending data.
+/** Blocking sending data
+ *
  *  @param obj     The i2c object
  *  @param address 7-bit address (last bit is 0)
  *  @param data    The buffer for sending
@@ -106,26 +112,29 @@ int  i2c_read(i2c_t *obj, int address, char *data, int length, int stop);
  *  @param stop    Stop to be generated after the transfer is done
  *  @return Number of written bytes
  */
-int  i2c_write(i2c_t *obj, int address, const char *data, int length, int stop);
+int i2c_write(i2c_t *obj, int address, const char *data, int length, int stop);
 
-/** Reset I2C peripheral. TODO: The action here. Most of the implementation sends stop().
+/** Reset I2C peripheral. TODO: The action here. Most of the implementation sends stop()
+ *
  *  @param obj The i2c object
  */
 void i2c_reset(i2c_t *obj);
 
-/** Read one byte.
+/** Read one byte
+ *
  *  @param obj The i2c object
  *  @param last Acknoledge
  *  @return The read byte
  */
-int  i2c_byte_read(i2c_t *obj, int last);
+int i2c_byte_read(i2c_t *obj, int last);
 
-/** Write one byte.
+/** Write one byte
+ *
  *  @param obj The i2c object
  *  @param data Byte to be written
  *  @return 1 if NAK was received, 0 if ACK was received, 2 for timeout.
  */
-int  i2c_byte_write(i2c_t *obj, int data);
+int i2c_byte_write(i2c_t *obj, int data);
 
 /**@}*/
 
@@ -134,15 +143,16 @@ int  i2c_byte_write(i2c_t *obj, int data);
 #if DEVICE_I2C_ASYNCH
 
 /**
- * \defgroup AsynchI2C Asynchronous I2C Hardware Abstraction Layer
+ * \defgroup hal_AsynchI2C Asynchronous I2C Hardware Abstraction Layer
  * @{
  */
 
-/** Start i2c asynchronous transfer.
+/** Start i2c asynchronous transfer
+ *
  *  @param obj       The I2C object
- *  @param tx        The buffer to send
+ *  @param tx        The transmit buffer
  *  @param tx_length The number of bytes to transmit
- *  @param rx        The buffer to receive
+ *  @param rx        The receive buffer
  *  @param rx_length The number of bytes to receive
  *  @param address   The address to be set - 7bit or 9 bit
  *  @param stop      If true, stop will be generated after the transfer is done
@@ -152,18 +162,22 @@ int  i2c_byte_write(i2c_t *obj, int data);
 void i2c_transfer_asynch(i2c_t *obj, void *tx, size_t tx_length, void *rx, size_t rx_length, uint32_t address, uint32_t stop, uint32_t handler, uint32_t event, DMAUsage hint);
 
 /** The asynchronous IRQ handler
+ *
  *  @param obj The I2C object which holds the transfer information
  *  @return event flags if a transfer termination condition was met or 0 otherwise.
  */
 uint32_t i2c_irq_handler_asynch(i2c_t *obj);
 
-/** Attempts to determine if I2C peripheral is already in use.
+/** Attempts to determine if I2C peripheral is already in use
+ *
  *  @param obj The I2C object
  *  @return non-zero if the I2C module is active or zero if it is not
  */
 uint8_t i2c_active(i2c_t *obj);
 
-/** Abort ongoing asynchronous transaction.
+/** Abort asynchronous transfer
+ *
+ *  This function does not perform any check, should happen in upper layers.
  *  @param obj The I2C object
  */
 void i2c_abort_asynch(i2c_t *obj);

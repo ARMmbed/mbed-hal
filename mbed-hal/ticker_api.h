@@ -59,6 +59,11 @@ typedef struct {
 extern "C" {
 #endif
 
+/**
+ * \defgroup hal_ticker Ticker hal functions
+ * @{
+ */
+
 /** Initialize a ticker and sets the event handler
  *
  * @param data    The ticker's data
@@ -94,6 +99,8 @@ void ticker_insert_event(const ticker_data_t *const data, ticker_event_t *obj, t
  * @return The current timestamp
  */
 timestamp_t ticker_read(const ticker_data_t *const data);
+
+/**@}*/
 
 #ifdef __cplusplus
 }

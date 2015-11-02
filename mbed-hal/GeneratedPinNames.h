@@ -19,6 +19,11 @@
 
 #include "cmsis.h"
 
+/* A target should define yotta config hardware pins.
+   The chip pins are defined in chip_pins.array file which should be located
+   in the chip hal. The pins.array is the generated file
+*/
+
 #ifdef YOTTA_CFG_HARDWARE_PINS
 #   include "mbed-hal/PinDefs.h"
 #   ifdef __cplusplus

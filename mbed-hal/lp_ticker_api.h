@@ -27,11 +27,9 @@ extern "C" {
 #endif
 
 /**
- * \defgroup LpTicker Low Power Ticker Functions
+ * \defgroup hal_LpTicker Low Power Ticker Functions
  * @{
  */
-
-/* HAL lp ticker */
 
 /** Initialize the low power ticker
  *
