@@ -48,7 +48,7 @@ void analogin_init(analogin_t *obj, PinName pin);
  */
 float analogin_read(analogin_t *obj);
 
-/** Read the value from analogin pin, represented as a unsigned 16bit value
+/** Read the value from analogin pin, represented as an unsigned 16bit value
  *
  * @param obj The analogin object
  * @return An unsigned 16bit value representing the current input voltage

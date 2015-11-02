@@ -57,7 +57,7 @@ uint32_t lp_ticker_get_overflows_counter(void);
 
 /** Get compare match register
  *
- * @return The time when is the next lp ticker interrupt scheduled
+ * @return The next lp ticker interrupt scheduled time
  */
 uint32_t lp_ticker_get_compare_match(void);
 
