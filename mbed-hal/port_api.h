@@ -24,20 +24,20 @@
 extern "C" {
 #endif
 
-/** port hal structure. port_s is declared in the target's hal
+/** Port HAL structure. port_s is declared in the target's HAL
  */
 typedef struct port_s port_t;
 
 /**
- * \defgroup hal_port Port hal functions
+ * \defgroup hal_port Port HAL functions
  * @{
  */
 
-/** Get the pin name from port's pin number
+/** Get the pin name from the port's pin number
  *
  * @param port  The port name
  * @param pin_n The pin number within the specified port
- * @return The pin name for port's pin number
+ * @return The pin name for the port's pin number
  */
 PinName port_pin(PortName port, int pin_n);
 
@@ -74,7 +74,7 @@ void port_write(port_t *obj, int value);
 /** Read the current value on the port
  *
  * @param obj The port object
- * @return An integer with each bit corresponding to associated port pin setting
+ * @return An integer with each bit corresponding to an associated port pin setting
  */
 int port_read(port_t *obj);
 

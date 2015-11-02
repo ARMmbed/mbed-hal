@@ -41,18 +41,18 @@ typedef struct {
     void (*set_interrupt)(timestamp_t timestamp); /**< Set interrupt function */
 } ticker_interface_t;
 
-/** Tickers events queue structure
+/** Ticker's event queue structure
  */
 typedef struct {
     ticker_event_handler event_handler; /**< Event handler */
     ticker_event_t *head;               /**< A pointer to head */
 } ticker_event_queue_t;
 
-/** Tickers data structure
+/** Ticker's data structure
  */
 typedef struct {
     const ticker_interface_t *interface; /**< Ticker's interface */
-    ticker_event_queue_t *queue;         /**< Ticker's events queue */
+    ticker_event_queue_t *queue;         /**< Ticker's event queue */
 } ticker_data_t;
 
 #ifdef __cplusplus
@@ -60,18 +60,18 @@ extern "C" {
 #endif
 
 /**
- * \defgroup hal_ticker Ticker hal functions
+ * \defgroup hal_ticker Ticker HAL functions
  * @{
  */
 
-/** Initialize a ticker and sets the event handler
+/** Initialize a ticker and set the event handler
  *
  * @param data    The ticker's data
  * @param handler A handler to be set
  */
 void ticker_set_handler(const ticker_data_t *const data, ticker_event_handler handler);
 
-/** Irq handler which goes through the events to trigger events in the past.
+/** IRQ handler that goes through the events to trigger overdue events.
  *
  * @param data    The ticker's data
  */
@@ -80,14 +80,14 @@ void ticker_irq_handler(const ticker_data_t *const data);
 /** Remove an event from the queue
  *
  * @param data The ticker's data
- * @param obj  The event's queue to be removed
+ * @param obj  The event object to be removed from the queue
  */
 void ticker_remove_event(const ticker_data_t *const data, ticker_event_t *obj);
 
-/** Insert an event from the queue
+/** Insert an event to the queue
  *
  * @param data      The ticker's data
- * @param obj       The event's queue to be removed
+ * @param obj       The event object to be inserted to the queue
  * @param timestamp The event's timestamp
  * @param id        The event object
  */
