@@ -100,6 +100,8 @@ Dependencies: None required
 
 Target Dependencies: None required
 
+This module should define chip pin names. More information about pin names in mbed OS [here](pins.md).
+
 #### mbed-hal-\<vendor\>-\<target\>
 The target-specific definitions expected by the vendor HAL and/or mbed-hal-\<vendor\>-\<chip family\>
 
