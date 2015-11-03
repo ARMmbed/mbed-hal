@@ -35,6 +35,9 @@
     },
     "cordio": {
       "mbed-hal-cordio": "~0.0.5"
+    },
+    "nxp": {
+      "mbed-hal-nxp": "~0.1.0"
     }
   }
 }
