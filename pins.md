@@ -32,4 +32,4 @@ Pin names are generated during the build by a python script which is shipped wit
 
 ## PinName file
 The chip hal implementation should contain PinNames header file. This header should just include mbed-hal/GenereatedPinNames.h for backwards-compatibility.
-We would like to remove PinNames in the future, use the GeneratedPinNames header file.
+We would like to remove PinNames from chip hal modules in the future, GeneratedPinNames header file will be renamed to PinNames.
