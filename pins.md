@@ -29,3 +29,7 @@ Pin names are an exception from typical yotta config, in that the pin names decl
 
 ## Pin Naming Mechanism
 Pin names are generated during the build by a python script which is shipped with mbed-hal.  This script uses the yotta config output (yotta_config.json) to generate a list of pin names.  These are included inside the "pins" enum declaration.
+
+## PinName file
+The chip hal implementation should contain PinNames header file. This header should just include mbed-hal/GenereatedPinNames.h for backwards-compatibility.
+We would like to remove PinNames in the future, use the GeneratedPinNames header file.
