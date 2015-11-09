@@ -3,7 +3,8 @@
 This module defines the API for the mbed low-level Hardware Abstraction Layer,
 which is implemented by target-specific modules.
 
-mbed hal API is considered an internal interface. We are planning to improve mbed-hal in the future, which might require changes in API.
+**mbed hal API is considered an internal interface. It is not recommended to depend on this module in an application.**
+We are planning to improve mbed-hal in the future, which might require changes in API.
 
 ### Installation
 ```
