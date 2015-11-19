@@ -48,7 +48,7 @@ typedef void (*gpio_irq_handler)(uint32_t id, gpio_irq_event event);
  * @param obj     The GPIO object to initialize
  * @param pin     The GPIO pin name
  * @param handler The handler to be attached to GPIO IRQ
- * @param id      The object ID
+ * @param id      The object ID (id != 0, 0 is reserved)
  * @return -1 if pin is NC, 0 otherwise
  */
 int gpio_irq_init(gpio_irq_t *obj, PinName pin, gpio_irq_handler handler, uint32_t id);
