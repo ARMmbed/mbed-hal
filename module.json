@@ -22,7 +22,7 @@
   },
   "targetDependencies": {
     "silabs": {
-      "mbed-hal-silabs": "~0.4.0"
+      "mbed-hal-silabs": "^1.0.0"
     },
     "freescale": {
       "mbed-hal-freescale": "^1.0.0"
