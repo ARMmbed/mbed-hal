@@ -41,6 +41,9 @@
     },
     "nxp": {
       "mbed-hal-nxp": "~0.1.0"
+    },
+    "arm-ssg": {
+	"mbed-hal-arm-ssg": "^1.0.0"
     }
   }
 }
