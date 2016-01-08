@@ -35,6 +35,9 @@
     },
     "cordio": {
       "mbed-hal-cordio": "~0.0.5"
+    },
+    "nuvoton": {
+      "mbed-hal-nuvoton": "^1.0.0"
     }
   }
 }
