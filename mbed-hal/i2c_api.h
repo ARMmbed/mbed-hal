@@ -19,6 +19,10 @@
 #include "device.h"
 #include "buffer.h"
 
+#if DEVICE_I2C_ASYNCH
+#include "dma_api.h"
+#endif
+
 #if DEVICE_I2C
 
 /**
