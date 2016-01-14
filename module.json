@@ -39,7 +39,7 @@
     "nuvoton": {
       "mbed-hal-nuvoton": "^1.0.0"
     },
-	"nxp": {
+    "nxp": {
       "mbed-hal-nxp": "~0.1.0"
     }
   }
