@@ -1,6 +1,6 @@
 {
   "name": "mbed-hal",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "mbed low-level Hardware Abstraction Layer",
   "keywords": [
     "mbed",
@@ -43,7 +43,7 @@
       "mbed-hal-nxp": "~0.1.0"
     },
     "arm-ssg": {
-	"mbed-hal-arm-ssg": "^1.0.0"
+      "mbed-hal-arm-ssg": "^1.0.0"
     }
   }
 }
