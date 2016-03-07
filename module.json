@@ -46,7 +46,7 @@
       "mbed-hal-arm-ssg": "^1.0.0"
     },
     "atmel": {
-      "mbed-hal-atmel": "~1.0.0"
+      "mbed-hal-atmel": "^1.0.0"
     }	
   }
 }
